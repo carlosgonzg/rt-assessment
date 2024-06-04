@@ -19,7 +19,5 @@ COPY . .
 
 RUN npm run build
 
-EXPOSE 3030
-
 # Run dev, as we would via the command line
 CMD ["npm", "start"]

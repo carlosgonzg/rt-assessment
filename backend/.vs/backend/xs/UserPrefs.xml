@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{70C54DDC-49D6-49F3-AF7D-56AA62017638}|Default">
+  <MonoDevelop.Ide.ItemProperties.backend PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="backend/Properties/launchSettings.json">
+    <Files>
+      <File FileName="backend/Controllers/WeatherForecastController.cs" Line="17" Column="18" />
+      <File FileName="backend/WeatherForecast.cs" Line="14" Column="2" />
+      <File FileName="backend/Program.cs" Line="1" Column="1" />
+      <File FileName="backend/appsettings.json" Line="1" Column="1" />
+      <File FileName="backend/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="backend/Properties/launchSettings.json" Line="17" Column="28" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="backend" expanded="True">
+            <Node name="backend">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Properties" expanded="True">
+                <Node name="launchSettings.json" selected="True" />
+              </Node>
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

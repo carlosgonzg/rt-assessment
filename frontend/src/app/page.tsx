@@ -1,4 +1,6 @@
 'use client';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,12 +9,12 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Tooltip } from '@mui/material';
 
 import DetailsDialog from './details-dialog/details-dialog';
 
-import { User, getData } from './utils/user';
-import { useEffect, useState } from 'react';
-import { Tooltip } from '@mui/material';
+import { User } from './utils/user';
+import { HttpService } from './utils/service';
 
 export default function Home() {
   const [rows, setRows] = useState<User[]>([]);
@@ -28,8 +30,24 @@ export default function Home() {
     setOpen(true);
   }
   useEffect(() => {
-    const data = getData();
-    setRows(data);
+    const apiService = new HttpService();
+    const { request, cancel } = apiService.get('/rtassessment')
+
+    request.then((response: { data: User[] }) => {
+      console.log(response.data)
+      setRows(response.data);
+    })
+    .catch(error => {
+      if (axios.isCancel(error)) {
+        console.log("Request canceled:", error.message);
+      } else {
+        // Handle other errors
+      }
+    });
+    return () => {
+      // Cleanup logic: if the component unmounts before the request completes, cancel the request
+      cancel("Component unmounted, aborting request");
+    };
   }, []);
 
   return (
@@ -47,7 +65,7 @@ export default function Home() {
           </TableHead>
           <TableBody>
             {rows.map((row) => (
-              <Tooltip title="Open detail">
+              <Tooltip key={row.id} title="Open detail">
                 <TableRow
                   key={row.id}
                   onClick={() => showDetails(row.id)}
