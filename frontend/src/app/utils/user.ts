@@ -1,8 +1,8 @@
 import { UserDetail } from "./userDetail";
 
-export interface User {
-    id: number,
-    name: string,
-    age: number,
-    details: UserDetail[]
+export class User {
+    id: number = 0;
+    name: string = '';
+    age: number = 0;
+    details: UserDetail[] = []
 }

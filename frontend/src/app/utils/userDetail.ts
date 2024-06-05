@@ -1,8 +1,8 @@
-export interface UserDetail {
-    id: number,
-    created: Date,
-    calories: number,
-    fat: number,
-    carbs: number,
-    protein: number,
+export class UserDetail {
+    id: number = 0;
+    created: Date = new Date();
+    calories: number = 0;
+    fat: number = 0;
+    carbs: number = 0;
+    protein: number = 0;
 }

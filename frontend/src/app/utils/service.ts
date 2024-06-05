@@ -35,4 +35,7 @@ export class HttpService {
     get(url: string, customHeaders = {}) {
         return this.request('get', url, null, customHeaders);
     }
+    put(url: string, body: any, customHeaders = {}) {
+        return this.request('put', url, body, customHeaders);
+    }
 }

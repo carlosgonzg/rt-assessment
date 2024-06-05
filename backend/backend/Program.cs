@@ -1,4 +1,6 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using backend.Models;
+
+var builder = WebApplication.CreateBuilder(args);
 var  policyName = "all_cors";
 
 // Adding cors
@@ -11,6 +13,8 @@ builder.Services.AddCors(o =>
                .AllowAnyHeader();
     });
 });
+
+builder.Services.AddScoped<UserDetailContext>(s => UserDetailContext.instance);
 
 // Add services to the container.
 builder.Services.AddControllers();
